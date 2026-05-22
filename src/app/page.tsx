@@ -90,7 +90,7 @@ export default function HomePage() {
         <div className="max-w-3xl mx-auto px-4 py-12 text-center">
           <p className="text-blue-200 text-sm font-medium tracking-widest uppercase mb-4">Only for SU trip</p>
           <h1 className="text-4xl md:text-5xl font-black mb-5 leading-tight">
-            호텔 URL 하나로<br />최저가 + 최적 조합 찾기
+            Agoda에서 찾은 호텔<br />URL만 붙여넣으면 끝
           </h1>
 
           {/* Split stay concept explainer */}
@@ -99,7 +99,7 @@ export default function HomePage() {
             <div className="space-y-2 text-blue-100 text-sm leading-relaxed">
               <p>
                 <span className="text-white font-medium">① 플랫폼 가격 비교</span><br />
-                호텔 URL 하나를 입력하면 Booking.com·Agoda·Hotels.com을 자동으로 뒤져서 어디가 제일 싼지 비교해요.
+                Agoda URL 하나를 넣으면 Booking.com·Hotels.com을 자동으로 뒤져서 어디가 제일 싼지 비교해드려요.
               </p>
               <p>
                 <span className="text-white font-medium">② 나눠 묵기 최적 조합</span><br />

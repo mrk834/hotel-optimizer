@@ -97,7 +97,7 @@ export default function SearchForm({ onSearch, loading }: Props) {
       <div>
         <div className="flex items-center justify-between mb-2">
           <label className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-            호텔 URL 붙여넣기
+            Agoda에서 찾은 호텔 URL
           </label>
           <button type="button" onClick={() => setPasteMode(!pasteMode)}
             className="text-xs text-blue-600 hover:underline">
@@ -106,7 +106,7 @@ export default function SearchForm({ onSearch, loading }: Props) {
         </div>
 
         <p className="text-xs text-gray-400 mb-3">
-          Booking.com, Agoda, Hotels.com, 공식 사이트 어디든 OK. URL 하나만 넣어도 다른 플랫폼 가격을 자동으로 찾아 비교해드려요.
+          Agoda에서 마음에 드는 호텔을 골라 URL을 복사해서 붙여넣으세요. Booking.com·Hotels.com 가격은 자동으로 찾아 비교해드려요.
         </p>
 
         {pasteMode ? (
@@ -114,7 +114,7 @@ export default function SearchForm({ onSearch, loading }: Props) {
             <textarea
               value={bulkText}
               onChange={(e) => setBulkText(e.target.value)}
-              placeholder={"URL을 줄바꿈 또는 쉼표로 구분해서 붙여넣기\n\nhttps://www.booking.com/hotel/...\nhttps://www.agoda.com/..."}
+              placeholder={"Agoda URL을 줄바꿈 또는 쉼표로 구분해서 붙여넣기\n\nhttps://www.agoda.com/...\nhttps://www.agoda.com/..."}
               rows={5}
               className="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
             />
@@ -132,7 +132,7 @@ export default function SearchForm({ onSearch, loading }: Props) {
                     type="url"
                     value={url}
                     onChange={(e) => handleUrlChange(i, e.target.value)}
-                    placeholder="https://www.booking.com/hotel/..."
+                    placeholder="https://www.agoda.com/..."
                     className="w-full pl-3 pr-24 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
                   />
                   {url && (
