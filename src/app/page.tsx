@@ -171,8 +171,8 @@ export default function HomePage() {
         {!loading && !result && !error && (
           <div className="text-center py-12 text-gray-400">
             <div className="text-6xl mb-4">🏨</div>
-            <p className="text-lg font-medium text-gray-500">위에서 조건을 입력하고 검색하세요</p>
-            <p className="text-sm mt-1">Booking.com 실시간 가격 + AI 리뷰 분석</p>
+            <p className="text-lg font-medium text-gray-500">Agoda에서 호텔 URL을 복사해서 붙여넣으세요</p>
+            <p className="text-sm mt-1">Agoda·Booking.com·Hotels.com 가격 비교 + AI 리뷰 분석</p>
           </div>
         )}
       </div>
