@@ -86,10 +86,10 @@ export default function HomePage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <div style={{ backgroundImage: "url('/hero-bg.jpg')", backgroundSize: 'cover', backgroundPosition: 'center top', minHeight: '280px' }}
+      <div style={{ backgroundImage: "url('/hero-bg.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 30%', minHeight: '420px' }}
         className="relative flex items-end">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-        <div className="relative w-full max-w-3xl mx-auto px-4 pb-10 pt-16 text-white">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+        <div className="relative w-full max-w-3xl mx-auto px-4 pb-12 pt-20 text-white">
           <p className="text-white/70 text-xs font-medium tracking-widest uppercase mb-2">Only for SU trip</p>
           <h1 className="text-4xl md:text-5xl font-black leading-tight drop-shadow-lg">
             Agoda에서 찾은 호텔<br />URL만 붙여넣으면 끝
@@ -97,7 +97,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto px-4 -mt-6 pb-16">
+      <div className="max-w-3xl mx-auto px-4 pt-8 pb-16">
         {/* Search form card */}
         <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
           <SearchForm onSearch={handleSearch} loading={loading} />
