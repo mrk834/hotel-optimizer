@@ -86,41 +86,39 @@ export default function HomePage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <div className="relative text-white" style={{ backgroundImage: "url('/hero-bg.jpg')", backgroundSize: 'cover', backgroundPosition: 'center top' }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-indigo-900/80" />
-        <div className="relative max-w-3xl mx-auto px-4 py-12 text-center">
-          <p className="text-blue-200 text-sm font-medium tracking-widest uppercase mb-4">Only for SU trip</p>
-          <h1 className="text-4xl md:text-5xl font-black mb-5 leading-tight">
+      <div style={{ backgroundImage: "url('/hero-bg.jpg')", backgroundSize: 'cover', backgroundPosition: 'center top', minHeight: '280px' }}
+        className="relative flex items-end">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+        <div className="relative w-full max-w-3xl mx-auto px-4 pb-10 pt-16 text-white">
+          <p className="text-white/70 text-xs font-medium tracking-widest uppercase mb-2">Only for SU trip</p>
+          <h1 className="text-4xl md:text-5xl font-black leading-tight drop-shadow-lg">
             Agoda에서 찾은 호텔<br />URL만 붙여넣으면 끝
           </h1>
-
-          {/* Split stay concept explainer */}
-          <div className="bg-white/10 backdrop-blur rounded-2xl px-5 py-4 max-w-xl mx-auto mb-4 text-left">
-            <p className="text-white font-semibold text-sm mb-2">💡 이런 걸 해드려요</p>
-            <div className="space-y-2 text-blue-100 text-sm leading-relaxed">
-              <p>
-                <span className="text-white font-medium">① 플랫폼 가격 비교</span><br />
-                Agoda URL 하나를 넣으면 Booking.com·Hotels.com을 자동으로 뒤져서 어디가 제일 싼지 비교해드려요.
-              </p>
-              <p>
-                <span className="text-white font-medium">② 나눠 묵기 최적 조합</span><br />
-                7박이면 A호텔 1박 → B호텔 6박, 혹은 3박 → 4박 등 모든 조합을 계산해요.
-                호텔마다 날짜별 가격이 다르기 때문에, 나눠 묵으면 한 곳만 있는 것보다 더 저렴해지는 경우가 있어요.
-              </p>
-              <p>
-                <span className="text-white font-medium">③ AI 리뷰 분석</span><br />
-                진성 리뷰를 골라 장단점을 정리하고, 이 시기 파리 시세 대비 가격이 좋은지 나쁜지도 알려드려요.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
 
       <div className="max-w-3xl mx-auto px-4 -mt-6 pb-16">
         {/* Search form card */}
-        <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
+        <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
           <SearchForm onSearch={handleSearch} loading={loading} />
         </div>
+
+        {/* Feature explainer */}
+        {!loading && !result && !error && (
+          <div className="grid grid-cols-3 gap-3 mb-8">
+            {[
+              { icon: '💱', title: '플랫폼 가격 비교', desc: 'Booking.com·Hotels.com 가격 자동 비교' },
+              { icon: '🏨', title: '나눠 묵기 최적화', desc: '1박+N박 등 모든 조합 계산해 최저가 찾기' },
+              { icon: '🤖', title: 'AI 리뷰 분석', desc: '진성 리뷰만 골라 장단점·가성비 평가' },
+            ].map(({ icon, title, desc }) => (
+              <div key={title} className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 text-center">
+                <div className="text-2xl mb-2">{icon}</div>
+                <p className="text-xs font-bold text-gray-800 mb-1">{title}</p>
+                <p className="text-xs text-gray-400 leading-snug">{desc}</p>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Progress */}
         {loading && progress && (
@@ -168,14 +166,6 @@ export default function HomePage() {
         {/* Results */}
         {result && <ResultsView result={result} />}
 
-        {/* Empty state */}
-        {!loading && !result && !error && (
-          <div className="text-center py-12 text-gray-400">
-            <div className="text-6xl mb-4">🏨</div>
-            <p className="text-lg font-medium text-gray-500">Agoda에서 호텔 URL을 복사해서 붙여넣으세요</p>
-            <p className="text-sm mt-1">Agoda·Booking.com·Hotels.com 가격 비교 + AI 리뷰 분석</p>
-          </div>
-        )}
       </div>
     </main>
   );
