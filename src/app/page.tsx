@@ -86,8 +86,9 @@ export default function HomePage() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <div className="bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 text-white">
-        <div className="max-w-3xl mx-auto px-4 py-12 text-center">
+      <div className="relative text-white" style={{ backgroundImage: "url('/hero-bg.jpg')", backgroundSize: 'cover', backgroundPosition: 'center top' }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-indigo-900/80" />
+        <div className="relative max-w-3xl mx-auto px-4 py-12 text-center">
           <p className="text-blue-200 text-sm font-medium tracking-widest uppercase mb-4">Only for SU trip</p>
           <h1 className="text-4xl md:text-5xl font-black mb-5 leading-tight">
             Agoda에서 찾은 호텔<br />URL만 붙여넣으면 끝
