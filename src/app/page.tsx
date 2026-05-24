@@ -90,10 +90,10 @@ export default function HomePage() {
         className="relative flex items-end">
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
         <div className="relative w-full max-w-3xl mx-auto px-4 pb-12 pt-20 text-white">
-          <p className="text-white/70 text-xs font-medium tracking-widest uppercase mb-2">Only for SU trip</p>
-          <h1 className="text-4xl md:text-5xl font-black leading-tight drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl font-black leading-tight drop-shadow-lg mb-3">
             Agoda에서 찾은 호텔<br />URL만 붙여넣으면 끝
           </h1>
+          <p className="text-white/70 text-xs font-medium tracking-widest uppercase">Sukism Trip</p>
         </div>
       </div>
 
